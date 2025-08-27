@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco via WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #25D366, #128C7E, #075E54);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: #128C7E;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .benefits {
+            margin-bottom: 25px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-icon {
+            background: #25D366;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #128C7E;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #075E54;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .testimonials {
+            background: #f0fff4;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .testimonial {
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            border-left: 4px solid #25D366;
+            padding-left: 20px;
+        }
+        
+        .client {
+            font-weight: bold;
+            color: #128C7E;
+            margin-top: 15px;
+        }
+        
+        .faq {
+            padding: 40px;
+            background: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #075E54;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: #075E54;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #25D366;
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            animation: typing 3.5s steps(40, end);
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fab fa-whatsapp"></i> Fale Conosco</h1>
+            <p class="subtitle">Entre em contato diretamente pelo WhatsApp para um atendimento rápido e personalizado</p>
+        </div>
+        
+        <div class="content">
+            <div class="contact-info">
+                <h2>Conversamos pelo WhatsApp?</h2>
+                <p>Estamos disponíveis para tirar suas dúvidas, oferecer suporte e ajudar no que você precisar!</p>
+                
+                <div class="benefits">
+                    <h3>Vantagens de nos contactar via WhatsApp:</h3>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <p>Resposta rápida e direta</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <p>Atendimento personalizado</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-paperclip"></i>
+                        </div>
+                        <p>Envio de arquivos e imagens</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <p>Disponível no seu horário</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Inicie uma conversa</h2>
+                <p>Clique no botão abaixo para iniciar uma conversa no WhatsApp. Responderemos o mais rápido possível!</p>
+                
+                <div class="btn-container">
+                    <a href="https://wa.me/5514998614589" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Iniciar Conversa
+                    </a>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Nosso horário de atendimento: Segunda a Sexta, 9h às 18h</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial">
+                "Atendimento excepcional pelo WhatsApp! Resolveram meu problema em questão de minutos, sem precisar esperar em filas ou enviar e-mails."
+                <div class="client">- Carlos Silva, Cliente desde 2022</div>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo leva para receber uma resposta?</div>
+                <p>Normalmente respondemos em até 15 minutos durante o horário comercial.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Posso enviar arquivos e imagens?</div>
+                <p>Sim, pelo WhatsApp você pode enviar documentos, imagens e prints para nos ajudar a entender sua necessidade.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">É um número automático ou atendimento humano?</div>
+                <p>Você será atendido por um de nossos especialistas, não por robôs ou respostas automatizadas.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 - Todos os direitos reservados</p>
+            <p>Atendimento personalizado via WhatsApp</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Adicionando data atual dinamicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = today.toLocaleDateString('pt-BR', options);
+            
+            const dateElement = document.createElement('p');
+            dateElement.textContent = 'Hoje é: ' + dateString;
+            dateElement.style.marginTop = '10px';
+            dateElement.style.color = '#fff';
+            document.querySelector('footer').appendChild(dateElement);
+        });
+    </script>
+</body>
+</html>
